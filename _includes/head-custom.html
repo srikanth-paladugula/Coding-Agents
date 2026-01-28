@@ -25,7 +25,8 @@
       fontFamily: 'Segoe UI, Arial, sans-serif'
     }
   });
-  await mermaid.run({
+  // Run mermaid asynchronously to avoid blocking page load
+  mermaid.run({
     querySelector: '.language-mermaid',
   });
 </script>

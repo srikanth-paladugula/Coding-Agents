@@ -33,7 +33,8 @@ a {
   transition: all 0.2s ease;
   
   &:hover {
-    color: darken(#d4927f, 10%);
+    color: var(--accent);
+    opacity: 0.8;
     text-decoration: underline;
   }
 }
@@ -160,6 +161,8 @@ li {
 }
 
 // Checkmarks and special list styling
+// Note: :has() selector requires modern browsers (Safari 15.4+, Chrome 105+, Firefox 121+)
+// For older browsers, this will gracefully degrade to showing standard list bullets
 li:has(> input[type="checkbox"]) {
   list-style: none;
   margin-left: -1.5em;
@@ -232,7 +235,7 @@ p {
   }
   
   .main-content {
-    max-width: auto;
+    max-width: none;
     margin: 1em;
   }
   
