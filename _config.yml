@@ -1,4 +1,5 @@
 remote_theme: just-the-docs/just-the-docs
+heading_anchors: false
 mermaid:
   version: "11.12.2"
 # Enable or disable the site search
