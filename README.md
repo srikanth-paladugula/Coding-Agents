@@ -1,3 +1,63 @@
+<style>
+    :root {
+        --page-bg: #f9f9f7;
+        --table-bg: #eef2f0;
+        --text: #3d3f3d;
+        --accent: #d4927f;
+    }
+
+    body {
+        background: var(--page-bg);
+        color: var(--text);
+    }
+
+    a {
+        color: var(--accent);
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid rgba(212, 146, 127, 0.55);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--table-bg);
+        color: var(--text);
+    }
+
+    th,
+    td {
+        border: 1px solid rgba(61, 63, 61, 0.18);
+        padding: 6px 10px;
+        vertical-align: top;
+    }
+
+    th {
+        background: #d2e2de;
+    }
+
+    blockquote {
+        background: var(--table-bg);
+        border-left: 4px solid var(--accent);
+        margin: 1em 0;
+        padding: 0.6em 1em;
+    }
+
+    code {
+        background: var(--table-bg);
+        color: var(--text);
+        padding: 0.1em 0.25em;
+        border-radius: 4px;
+    }
+
+    pre code {
+        background: transparent;
+        padding: 0;
+    }
+</style>
+
 # AI-Assisted Coding Agents in 2026
 
 
@@ -316,7 +376,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 ## Architectural Differences in IDE and CLI Agents
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#fdfdf7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph CLI["CLI Agent Architecture"]
         direction TB
@@ -593,35 +653,6 @@ CLI agents operate as standalone processes with full user-level system access. T
 | **Best For** | Microsoft teams | Complex reasoning | Rapid iteration | Cost efficiency | Privacy/flexibility | Git workflows |
 | **Ecosystem Lock-in** | GitHub | Anthropic | OpenAI | Google | None | None |
 
----
-
-## Strategic Recommendation for Microsoft Developers
-
-### IDE Layer: GitHub Copilot ✅
-**Recommended:** GitHub Copilot for all Microsoft developers  
-**Rationale:**
-- Native integration with VS Code and Visual Studio
-- Unified pricing across IDE and CLI
-- Microsoft enterprise governance and support
-- Strategic alignment with Microsoft's AI strategy
-
-**Alternative Consideration:** Cursor (only if managing 100K+ LOC monorepos requiring superior context management)
-
-### CLI Layer: GitHub Copilot CLI (Primary) + Claude Code (Specialized)
-**Recommended Hybrid Strategy:**
-1. **GitHub Copilot CLI** for daily workflows, GitHub-based automation, and CI/CD integration
-2. **Claude Code** for complex architectural reasoning when simple implementation isn't sufficient
-
-**Rationale:**
-- GitHub Copilot CLI covers 80% of terminal use cases with perfect GitHub integration
-- Claude Code adds specialized reasoning capability without tool proliferation
-- Both agents play complementary roles; single vendor strategy remains intact at Microsoft level
-
-**When to Evaluate Alternatives:**
-- **Aider:** Teams performing 20+ large refactorings per month and valuing atomic git commits
-- **OpenCode:** Organizations with strict data privacy requirements (not applicable in most Microsoft contexts)
-
----
 
 ## Reasons for Popularity: Evidence-Based Analysis
 
@@ -746,63 +777,3 @@ The AI-assisted coding landscape in 2026 has matured into distinct, complementar
 - **Model Context Protocol (MCP):** https://modelcontextprotocol.io/
 - **Visual Studio Copilot Integration:** https://visualstudio.microsoft.com/copilot/
 - **VS Code Copilot Documentation:** https://code.visualstudio.com/docs/copilot/overview
-
-<style>
-    :root {
-        --page-bg: #f9f9f7;
-        --table-bg: #eef2f0;
-        --text: #3d3f3d;
-        --accent: #d4927f;
-    }
-
-    body {
-        background: var(--page-bg);
-        color: var(--text);
-    }
-
-    a {
-        color: var(--accent);
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid rgba(212, 146, 127, 0.55);
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background: var(--table-bg);
-        color: var(--text);
-    }
-
-    th,
-    td {
-        border: 1px solid rgba(61, 63, 61, 0.18);
-        padding: 6px 10px;
-        vertical-align: top;
-    }
-
-    th {
-        background: #d2e2de;
-    }
-
-    blockquote {
-        background: var(--table-bg);
-        border-left: 4px solid var(--accent);
-        margin: 1em 0;
-        padding: 0.6em 1em;
-    }
-
-    code {
-        background: var(--table-bg);
-        color: var(--text);
-        padding: 0.1em 0.25em;
-        border-radius: 4px;
-    }
-
-    pre code {
-        background: transparent;
-        padding: 0;
-    }
-</style>
