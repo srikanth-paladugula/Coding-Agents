@@ -9,6 +9,9 @@
     margin: 1em;
   }
 }
-.skip-link { // Replace '.skip-link' with the actual class name found during inspection
+.skip-to-main { // Replace '.skip-link' with the actual class name found during inspection
   display: none !important;
+}
+body > svg:first-child {
+ display: none !important;
 }
