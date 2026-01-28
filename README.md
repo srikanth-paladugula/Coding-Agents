@@ -1,5 +1,4 @@
-# AI-Assisted Coding Agents in 2026
-
+# AI-Assisted Coding Agents
 
 ## Introduction
 
@@ -212,8 +211,9 @@ IDE agents operate within the constrained security model of editor plugins, allo
 
 
 **Key Strengths:**
+
 | Strength | Description |
-|----------|-------------|
+|-------------|-------------|
 | **Composer Feature** | Multi-file editing with full codebase context awareness; can refactor across 50+ files while maintaining consistency |
 | **Model Flexibility** | Access to GPT-5, Claude 4.5 Sonnet, Gemini 2.5 Pro, and custom models; switch between models mid-session |
 | **Agentic Capabilities** | Agent mode can plan, execute, iterate, and test complex features autonomously |
@@ -708,6 +708,15 @@ The AI-assisted coding landscape in 2026 has matured into distinct, complementar
 ✅ **No need for evaluation fatigue** – standardization reduces support surface area and training costs
 
 ---
+
+## Additional Resources
+
+- **GitHub Copilot Documentation:** https://docs.github.com/en/copilot
+- **GitHub Copilot CLI Getting Started:** https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/
+- **GitHub Copilot CLI 2026 Changelog:** https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install/
+- **Model Context Protocol (MCP):** https://modelcontextprotocol.io/
+- **Visual Studio Copilot Integration:** https://visualstudio.microsoft.com/copilot/
+- **VS Code Copilot Documentation:** https://code.visualstudio.com/docs/copilot/overview
 
 <style>
     :root {
