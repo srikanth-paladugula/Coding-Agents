@@ -1,7 +1,36 @@
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs" type="module"></script>
+<!-- Meta tags for better presentation -->
+<meta name="description" content="A comprehensive guide to AI-Assisted Coding Agents in 2026, covering IDE-based agents, VSCode forks, and CLI agents.">
+<meta name="keywords" content="AI, coding agents, GitHub Copilot, Cursor, Claude Code, IDE extensions, AI programming">
+<meta name="author" content="Srikanth Paladugula">
+
+<!-- Open Graph meta tags for social sharing -->
+<meta property="og:title" content="AI-Assisted Coding Agents in 2026">
+<meta property="og:description" content="A comprehensive guide to AI-Assisted Coding Agents in 2026">
+<meta property="og:type" content="website">
+
+<!-- Mermaid JS for diagrams -->
 <script type="module">
-  mermaid.initialize({
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'default' // You can change the theme to 'dark', 'forest', 'neutral', etc.
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#fdfdf7',
+      primaryTextColor: '#3d3f3d',
+      primaryBorderColor: '#d4927f',
+      lineColor: '#d4927f',
+      secondaryColor: '#f9f9f7',
+      tertiaryColor: '#fdfdf7',
+      background: '#f9f9f7',
+      fontFamily: 'Segoe UI, Arial, sans-serif'
+    }
+  });
+  await mermaid.run({
+    querySelector: '.language-mermaid',
   });
 </script>
+
+<!-- Google Fonts for better typography (optional) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
