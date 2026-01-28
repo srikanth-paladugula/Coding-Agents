@@ -709,15 +709,6 @@ The AI-assisted coding landscape in 2026 has matured into distinct, complementar
 
 ---
 
-## Additional Resources
-
-- **GitHub Copilot Documentation:** https://docs.github.com/en/copilot
-- **GitHub Copilot CLI Getting Started:** https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/
-- **GitHub Copilot CLI 2026 Changelog:** https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install/
-- **Model Context Protocol (MCP):** https://modelcontextprotocol.io/
-- **Visual Studio Copilot Integration:** https://visualstudio.microsoft.com/copilot/
-- **VS Code Copilot Documentation:** https://code.visualstudio.com/docs/copilot/overview
-
 <style>
     :root {
         --page-bg: #f9f9f7;
