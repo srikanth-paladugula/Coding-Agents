@@ -1,7 +1,4 @@
-# AI-Assisted Coding Agents
-
-## Introduction
-
+# AI-Assisted Coding Agents in 2026
 AI-assisted coding agents have undergone a dramatic transformation from simple autocomplete tools to sophisticated autonomous systems capable of understanding entire codebases, managing multi-file edits, and executing complex development workflows. In 2026, the landscape has matured into distinct categories—IDE-based extensions, IDE forks optimized for AI-native workflows, and powerful command-line agents operating at the system level.
 
 ```mermaid
@@ -235,6 +232,7 @@ IDE agents operate within the constrained security model of editor plugins, allo
 **Description:** Enterprise-focused AI code completion platform emphasizing privacy, control, and local deployment options. Recognized by Gartner as the #1 AI code assistant for critical capabilities.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **Privacy & On-Premise Deployment** | Can run entirely locally without cloud connectivity; meets strictest compliance requirements |
@@ -256,6 +254,7 @@ IDE agents operate within the constrained security model of editor plugins, allo
 **Description:** Democratizing AI-assisted coding through a free tier powerful enough for individual developers and open-source projects. Codeium combines accessibility with strong performance.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **Complete Free Tier** | Full-featured AI autocomplete without payment |
@@ -275,6 +274,8 @@ IDE agents operate within the constrained security model of editor plugins, allo
 
 ### 5. **Supermaven**
 **Description:** Specialized code completion tool built for extreme scale through its 1-million token context window. Exceptional for understanding architectural relationships in massive codebases.
+
+**Key Strengths:**
 
 | Strength | Description |
 |----------|-------------|
@@ -463,6 +464,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 **Description:** GitHub's official command-line interface bringing GitHub Copilot's capabilities directly to the terminal. GitHub Copilot CLI represents Microsoft's strategic move to enable agentic workflows throughout the entire development environment—from IDE to terminal to CI/CD pipelines.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **GitHub-Native Workflow** | Deep integration with GitHub issues, pull requests, and repositories; understands project context automatically |
@@ -492,6 +494,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 **Description:** Anthropic's official CLI agent built around Claude's superior reasoning capabilities. Claude Code represents the most mature agentic implementation for complex reasoning tasks.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **Superior Reasoning** | Claude's chain-of-thought reasoning excels at understanding complex requirements |
@@ -516,6 +519,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 **Description:** OpenAI's official command-line interface providing direct access to GPT models from the terminal. Codex CLI emphasizes simplicity and rapid iteration.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **OpenAI Integration** | Direct access to latest OpenAI models (o4-mini, o3) |
@@ -537,6 +541,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 **Description:** Purpose-built AI pair programming agent for Git-native development workflows. Aider's deep integration with Git enables atomic multi-file commits.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **Git-Native Workflow** | Automatically commits changes with descriptive messages |
@@ -558,6 +563,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 **Description:** Open-source, provider-agnostic CLI agent supporting 75+ LLM providers. OpenCode maximizes flexibility through support for local models via Ollama.
 
 **Key Strengths:**
+
 | Strength | Description |
 |----------|-------------|
 | **Vendor Lock-in Freedom** | Support for 75+ LLM providers (Claude, GPT, Gemini, Qwen, local models) |
@@ -653,6 +659,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 ## Pricing & Subscription Models Summary
 
 ### IDE Agents (Monthly, Individual)
+
 | Tool | Free Tier | Pro Tier | Premium Tier | Enterprise |
 |------|-----------|----------|-------------|------------|
 | **GitHub Copilot** | Limited trial | $10/mo | — | $19/user/mo |
@@ -662,6 +669,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 | **Supermaven** | **Yes** | Pay-as-you-go | — | Enterprise custom |
 
 ### CLI Agents (Monthly)
+
 | Tool | Cost | Model | Microsoft Alignment |
 |------|------|-------|------------------|
 | **GitHub Copilot CLI** | Included with Copilot ($10/mo) | Subscription + included models | **✅ Strategic** |
