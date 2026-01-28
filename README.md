@@ -1,3 +1,8 @@
+---
+layout: default
+title: AI-Assisted Coding Agents in 2026
+---
+
 # AI-Assisted Coding Agents in 2026
 AI-assisted coding agents have undergone a dramatic transformation from simple autocomplete tools to sophisticated autonomous systems capable of understanding entire codebases, managing multi-file edits, and executing complex development workflows. In 2026, the landscape has matured into distinct categories—IDE-based extensions, IDE forks optimized for AI-native workflows, and powerful command-line agents operating at the system level.
 
@@ -725,63 +730,3 @@ The AI-assisted coding landscape in 2026 has matured into distinct, complementar
 - **Model Context Protocol (MCP):** https://modelcontextprotocol.io/
 - **Visual Studio Copilot Integration:** https://visualstudio.microsoft.com/copilot/
 - **VS Code Copilot Documentation:** https://code.visualstudio.com/docs/copilot/overview
-
-<style>
-    :root {
-        --page-bg: #f9f9f7;
-        --table-bg: #eef2f0;
-        --text: #3d3f3d;
-        --accent: #d4927f;
-    }
-
-    body {
-        background: var(--page-bg);
-        color: var(--text);
-    }
-
-    a {
-        color: var(--accent);
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid rgba(212, 146, 127, 0.55);
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background: var(--table-bg);
-        color: var(--text);
-    }
-
-    th,
-    td {
-        border: 1px solid rgba(61, 63, 61, 0.18);
-        padding: 6px 10px;
-        vertical-align: top;
-    }
-
-    th {
-        background: #d2e2de;
-    }
-
-    blockquote {
-        background: var(--table-bg);
-        border-left: 4px solid var(--accent);
-        margin: 1em 0;
-        padding: 0.6em 1em;
-    }
-
-    code {
-        background: var(--table-bg);
-        color: var(--text);
-        padding: 0.1em 0.25em;
-        border-radius: 4px;
-    }
-
-    pre code {
-        background: transparent;
-        padding: 0;
-    }
-</style>
