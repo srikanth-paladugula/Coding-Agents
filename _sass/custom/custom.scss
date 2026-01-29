@@ -188,6 +188,49 @@ strong {
   padding: 1.5em;
   margin: 2em 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  overflow-y: visible;
+  
+  // Prevent text truncation in nodes
+  svg {
+    max-width: none !important;
+    overflow: visible !important;
+  }
+  
+  // Ensure text is not clipped
+  .node rect,
+  .node circle,
+  .node ellipse,
+  .node polygon,
+  .node path {
+    overflow: visible;
+  }
+  
+  .nodeLabel,
+  .label,
+  .edgeLabel,
+  .cluster-label,
+  text {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+  
+  // Timeline specific fixes
+  .timeline-node,
+  .timeline-label {
+    overflow: visible !important;
+  }
+
+  // Flowchart node fixes
+  foreignObject {
+    overflow: visible !important;
+  }
+  
+  foreignObject div {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
 }
 
 // Paragraphs

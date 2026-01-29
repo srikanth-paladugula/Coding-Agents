@@ -14,6 +14,12 @@
   mermaid.initialize({ 
     startOnLoad: true,
     theme: 'base',
+    securityLevel: 'loose',
+    flowchart: {
+      useMaxWidth: false,
+      htmlLabels: true,
+      wrap: true
+    },
     themeVariables: {
       primaryColor: '#fdfdf7',
       primaryTextColor: '#3d3f3d',
