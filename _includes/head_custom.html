@@ -34,95 +34,12 @@
       fontFamily: 'Segoe UI, Arial, sans-serif'
     }
   });
-  // Run mermaid asynchronously to avoid blocking page load
   mermaid.run({
     querySelector: '.language-mermaid',
   });
 </script>
 
-<!-- Google Fonts for better typography (optional) -->
+<!-- Google Fonts for better typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Sidebar Toggle and TOC Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Create sidebar toggle button
-  const toggleBtn = document.createElement('button');
-  toggleBtn.className = 'sidebar-toggle';
-  toggleBtn.innerHTML = '☰ Contents';
-  toggleBtn.setAttribute('aria-label', 'Toggle navigation');
-  document.body.appendChild(toggleBtn);
-
-  // Track sidebar state
-  let sidebarHidden = false;
-
-  // Toggle sidebar function
-  function toggleSidebar() {
-    sidebarHidden = !sidebarHidden;
-    if (sidebarHidden) {
-      document.body.classList.add('sidebar-hidden');
-      toggleBtn.innerHTML = '☰ Show Menu';
-    } else {
-      document.body.classList.remove('sidebar-hidden');
-      toggleBtn.innerHTML = '☰ Contents';
-    }
-  }
-
-  // Event listener
-  toggleBtn.addEventListener('click', toggleSidebar);
-
-  // Generate right-side TOC from h2 headings
-  const headings = document.querySelectorAll('.main-content h2');
-  if (headings.length > 0) {
-    const tocWrapper = document.createElement('div');
-    tocWrapper.className = 'toc-wrapper';
-    
-    const tocHeading = document.createElement('div');
-    tocHeading.className = 'toc-heading';
-    tocHeading.textContent = 'On This Page';
-    tocWrapper.appendChild(tocHeading);
-    
-    const tocList = document.createElement('ul');
-    tocList.className = 'toc-list';
-    
-    headings.forEach(function(heading) {
-      if (heading.id) {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = '#' + heading.id;
-        a.textContent = heading.textContent.replace(/^#\s*/, '').replace(/\s*$/, '');
-        li.appendChild(a);
-        tocList.appendChild(li);
-      }
-    });
-    
-    tocWrapper.appendChild(tocList);
-    document.body.appendChild(tocWrapper);
-    
-    // Highlight active section on scroll
-    const tocLinks = tocWrapper.querySelectorAll('a');
-    
-    function highlightActiveSection() {
-      const scrollPos = window.scrollY + 120;
-      
-      headings.forEach(function(heading, index) {
-        const nextHeading = headings[index + 1];
-        const top = heading.offsetTop;
-        const bottom = nextHeading ? nextHeading.offsetTop : document.body.scrollHeight;
-        
-        if (scrollPos >= top && scrollPos < bottom) {
-          tocLinks.forEach(function(link) { link.classList.remove('active'); });
-          const activeLink = tocWrapper.querySelector('a[href="#' + heading.id + '"]');
-          if (activeLink) activeLink.classList.add('active');
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', highlightActiveSection);
-    highlightActiveSection();
-  }
-});
-});
-</script>
