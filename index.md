@@ -322,7 +322,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 ## Architectural Differences in IDE and CLI Agents
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#fdfdf7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph CLI["CLI Agent Architecture"]
         direction TB
@@ -379,7 +379,7 @@ flowchart TB
 
 ## Cross-Repository Coordination Pattern
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart LR
     subgraph CrossRepo["Cross-Repository Coordination Pattern"]
         direction TB
@@ -415,7 +415,7 @@ flowchart LR
 
 ## Parallel Execution Pattern
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph Parallel["Parallel Execution Pattern"]
         direction TB
