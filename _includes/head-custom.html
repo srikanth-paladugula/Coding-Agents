@@ -51,41 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create sidebar toggle button
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'sidebar-toggle';
-  toggleBtn.innerHTML = '<span>Contents</span>';
+  toggleBtn.innerHTML = '☰ Contents';
   toggleBtn.setAttribute('aria-label', 'Toggle navigation');
   document.body.appendChild(toggleBtn);
 
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.className = 'sidebar-overlay';
-  document.body.appendChild(overlay);
-
-  // Get sidebar
-  const sidebar = document.querySelector('.side-bar');
-  const mainContent = document.querySelector('.main-content-wrap');
+  // Track sidebar state
+  let sidebarHidden = false;
 
   // Toggle sidebar function
   function toggleSidebar() {
-    sidebar.classList.toggle('is-open');
-    overlay.classList.toggle('is-visible');
-    if (mainContent) {
-      mainContent.classList.toggle('sidebar-open');
+    sidebarHidden = !sidebarHidden;
+    if (sidebarHidden) {
+      document.body.classList.add('sidebar-hidden');
+      toggleBtn.innerHTML = '☰ Show Menu';
+    } else {
+      document.body.classList.remove('sidebar-hidden');
+      toggleBtn.innerHTML = '☰ Contents';
     }
   }
 
-  // Event listeners
+  // Event listener
   toggleBtn.addEventListener('click', toggleSidebar);
-  overlay.addEventListener('click', toggleSidebar);
 
-  // Close sidebar on escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
-      toggleSidebar();
-    }
-  });
-
-  // Generate right-side TOC from h2 and h3 headings
-  const headings = document.querySelectorAll('.main-content h2, .main-content h3');
+  // Generate right-side TOC from h2 headings
+  const headings = document.querySelectorAll('.main-content h2');
   if (headings.length > 0) {
     const tocWrapper = document.createElement('div');
     tocWrapper.className = 'toc-wrapper';
@@ -98,27 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.createElement('ul');
     tocList.className = 'toc-list';
     
-    let currentH2List = null;
-    
     headings.forEach(function(heading) {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + heading.id;
-      a.textContent = heading.textContent.replace(/^#\s*/, '');
-      li.appendChild(a);
-      
-      if (heading.tagName === 'H2') {
-        currentH2List = document.createElement('ul');
-        li.appendChild(currentH2List);
-        tocList.appendChild(li);
-      } else if (heading.tagName === 'H3' && currentH2List) {
-        const nestedLi = document.createElement('li');
-        const nestedA = document.createElement('a');
-        nestedA.href = '#' + heading.id;
-        nestedA.textContent = heading.textContent.replace(/^#\s*/, '');
-        nestedLi.appendChild(nestedA);
-        currentH2List.appendChild(nestedLi);
-      } else {
+      if (heading.id) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent.replace(/^#\s*/, '').replace(/\s*$/, '');
+        li.appendChild(a);
         tocList.appendChild(li);
       }
     });
@@ -130,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tocLinks = tocWrapper.querySelectorAll('a');
     
     function highlightActiveSection() {
-      const scrollPos = window.scrollY + 100;
+      const scrollPos = window.scrollY + 120;
       
       headings.forEach(function(heading, index) {
         const nextHeading = headings[index + 1];
@@ -138,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const bottom = nextHeading ? nextHeading.offsetTop : document.body.scrollHeight;
         
         if (scrollPos >= top && scrollPos < bottom) {
-          tocLinks.forEach(link => link.classList.remove('active'));
+          tocLinks.forEach(function(link) { link.classList.remove('active'); });
           const activeLink = tocWrapper.querySelector('a[href="#' + heading.id + '"]');
           if (activeLink) activeLink.classList.add('active');
         }
@@ -148,5 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightActiveSection);
     highlightActiveSection();
   }
+});
 });
 </script>
