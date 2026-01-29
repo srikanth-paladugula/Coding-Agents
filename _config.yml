@@ -6,13 +6,13 @@ baseurl: /Coding-Agents
 
 # Theme configuration
 remote_theme: just-the-docs/just-the-docs
-heading_anchors: false
+heading_anchors: true
 mermaid:
   version: "11.12.2"
   
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: false
+search_enabled: true
 
 
 # Makes Aux links open in a new tab. Default is false
@@ -20,7 +20,7 @@ aux_links_new_tab: false
 
 # Enable or disable the side/mobile menu globally
 # Nav menu can also be selectively enabled or disabled using page variables or the minimal layout
-nav_enabled: false
+nav_enabled: true
 search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
