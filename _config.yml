@@ -62,5 +62,10 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 # Color scheme
 color_scheme: nil # use custom colors defined in _sass/custom/custom.scss
 
+# Table of Contents - show on right side
+toc:
+  heading_selectors: "h2, h3"
+  toc_heading: "On This Page"
+
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one

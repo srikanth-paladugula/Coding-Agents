@@ -318,6 +318,248 @@ p {
 }
 
 // Hide SVG elements
+
+// =============================================
+// Collapsible Sidebar Navigation with Breadcrumb
+// =============================================
+
+// Sidebar toggle button (breadcrumb style)
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: darken(#d4927f, 10%);
+    transform: translateY(-1px);
+  }
+
+  &::before {
+    content: "☰";
+    font-size: 1.1rem;
+  }
+}
+
+// Sidebar container
+.side-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--page-bg);
+  border-right: 1px solid var(--border-color);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 4rem;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+// Sidebar overlay
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Navigation list styling
+.nav-list {
+  padding: 1rem;
+  
+  .nav-list-item {
+    margin: 0.25rem 0;
+    
+    .nav-list-link {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      
+      &:hover {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+      
+      &.active {
+        background: var(--accent);
+        color: white;
+      }
+    }
+  }
+}
+
+// Right-side Table of Contents
+.toc-wrapper {
+  position: fixed;
+  right: 1rem;
+  top: 5rem;
+  width: 220px;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  background: var(--page-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+
+  .toc-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin: 0.25rem 0;
+      
+      a {
+        display: block;
+        padding: 0.25rem 0;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        border-left: 2px solid transparent;
+        padding-left: 0.5rem;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          color: var(--accent);
+          border-left-color: var(--accent);
+        }
+        
+        &.active {
+          color: var(--accent);
+          border-left-color: var(--accent);
+          font-weight: 500;
+        }
+      }
+      
+      // Nested items (h3)
+      ul {
+        list-style: none;
+        padding-left: 0.75rem;
+        margin: 0.25rem 0;
+        
+        li a {
+          font-size: 0.75rem;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+}
+
+// Adjust main content when sidebar is open
+.main-content-wrap {
+  transition: margin-left 0.3s ease;
+  
+  &.sidebar-open {
+    margin-left: 280px;
+  }
+}
+
+// Breadcrumb navigation
+.breadcrumb-nav {
+  position: sticky;
+  top: 0;
+  background: var(--page-bg);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 100;
+  font-size: 0.85rem;
+  
+  .breadcrumb-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    color: var(--accent);
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .breadcrumb-separator {
+    color: var(--border-color);
+  }
+  
+  .breadcrumb-current {
+    color: var(--text);
+    font-weight: 500;
+  }
+}
+
+// Hide TOC on mobile
+@media (max-width: 1200px) {
+  .toc-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .side-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 body > svg:first-child {
   display: none !important;
 }
