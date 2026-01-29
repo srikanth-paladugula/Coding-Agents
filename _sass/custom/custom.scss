@@ -182,7 +182,9 @@ strong {
 }
 
 // Mermaid diagrams styling
-.mermaid {
+.mermaid,
+pre.language-mermaid,
+.language-mermaid {
   background: white;
   border-radius: 8px;
   padding: 1.5em;
@@ -190,10 +192,13 @@ strong {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
   overflow-y: visible;
+  max-width: none !important;
+  width: auto !important;
   
   // Prevent text truncation in nodes
   svg {
     max-width: none !important;
+    width: auto !important;
     overflow: visible !important;
   }
   
@@ -213,7 +218,7 @@ strong {
   text {
     overflow: visible !important;
     text-overflow: clip !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
   }
   
   // Timeline specific fixes
@@ -225,11 +230,26 @@ strong {
   // Flowchart node fixes
   foreignObject {
     overflow: visible !important;
+    width: auto !important;
   }
   
   foreignObject div {
     overflow: visible !important;
     text-overflow: clip !important;
+    white-space: nowrap !important;
+  }
+}
+
+// Override Just the Docs main content width for mermaid
+.main-content-wrap,
+.main-content {
+  .mermaid,
+  pre.language-mermaid {
+    margin-left: -1em;
+    margin-right: -1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    max-width: calc(100% + 2em) !important;
   }
 }
 
