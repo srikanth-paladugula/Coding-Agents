@@ -5,7 +5,7 @@ url: https://srikanth-paladugula.github.io
 baseurl: /Coding-Agents
 
 # Theme configuration
-theme: "just-the-docs"
+remote_theme: just-the-docs/just-the-docs
 heading_anchors: false
 mermaid:
   version: "11.12.2"
