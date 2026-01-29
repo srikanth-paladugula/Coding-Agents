@@ -1,9 +1,5 @@
----
-layout: default
-title: AI-Assisted Coding Agents in 2026
----
+# AI-Assisted Coding Agents
 
-# AI-Assisted Coding Agents in 2026
 AI-assisted coding agents have undergone a dramatic transformation from simple autocomplete tools to sophisticated autonomous systems capable of understanding entire codebases, managing multi-file edits, and executing complex development workflows. In 2026, the landscape has matured into distinct categories—IDE-based extensions, IDE forks optimized for AI-native workflows, and powerful command-line agents operating at the system level.
 
 ```mermaid
