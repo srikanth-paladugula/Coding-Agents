@@ -318,7 +318,7 @@ CLI agents operate as standalone processes with full user-level system access. T
 ## Architectural Differences in IDE and CLI Agents
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#fdfdf7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"fontSize": "12px", "background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph CLI["CLI Agent Architecture"]
         direction TB
@@ -375,7 +375,7 @@ flowchart TB
 
 ## Cross-Repository Coordination Pattern
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"fontSize": "12px", "background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart LR
     subgraph CrossRepo["Cross-Repository Coordination Pattern"]
         direction TB
@@ -411,7 +411,7 @@ flowchart LR
 
 ## Parallel Execution Pattern
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "nodeSpacing": 50, "rankSpacing": 50}, "themeVariables": {"fontSize": "12px", "background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
 flowchart TB
     subgraph Parallel["Parallel Execution Pattern"]
         direction TB
@@ -600,7 +600,6 @@ CLI agents operate as standalone processes with full user-level system access. T
 | **Best For** | Microsoft teams | Complex reasoning | Rapid iteration | Cost efficiency | Privacy/flexibility | Git workflows |
 | **Ecosystem Lock-in** | GitHub | Anthropic | OpenAI | Google | None | None |
 
-
 ## Reasons for Popularity: Evidence-Based Analysis
 
 ### IDE Agents
@@ -637,7 +636,21 @@ CLI agents operate as standalone processes with full user-level system access. T
 - **Why:** Git-native workflow eliminates context switching; atomic commits provide audit trail
 - **Evidence:** Highest adoption among open-source projects performing framework migrations
 
+## Coding Agent SDKs 
+
+Beyond turnkey IDE and CLI tools, most major providers now offer SDKs and frameworks for building your own coding agents and integrating them into applications, CLIs, and workflows.
+
+| SDK / Framework | Provider | Availability (2026) | Primary Use Case | Key Features |
+|-----------------|----------|---------------------|------------------|--------------|
+| **GitHub Copilot SDK** | GitHub / Microsoft | Generally available for GitHub Enterprise and Copilot customers | Embed Copilot-powered agents into internal apps, portals, and workflows | High-level APIs to call GitHub-hosted models, integrate with GitHub repos and issues, support for tools via MCP, enterprise governance and policy controls |
+| **Claude SDKs & Claude Code** | Anthropic | Claude API and official SDKs are generally available; Claude Code available as a code-focused experience | Build agentic backends and coding experiences around Claude; use Claude Code for repo-aware editing | Official API & SDKs for multiple languages, tool use and function calling, structured outputs, long-context models; Claude Code adds IDE/terminal-style workflows for reading, editing, and reasoning about codebases |
+| **OpenAI Codex CLI** | OpenAI | Available via OpenAI “Coding agents” offerings (Codex CLI docs) | Terminal-first coding agent that can work over local projects | Reads and edits project files from the CLI, runs shell commands through tools, integrates with OpenAI platform agents, supports multi-file reasoning and refactoring |
+| **OpenAI Agents & SDKs** | OpenAI | Generally available via OpenAI Platform | Build custom coding agents and assistants that use tools and computers | Agents API for tool-using assistants, official client libraries (SDKs) in popular languages, connectors and MCP support, code execution and code interpreter-style tools for running and testing code |
+| **Claude AI Agents (via Claude API)** | Anthropic | Available via Claude Developer Platform | General-purpose and coding-focused agents backed by Claude | Use Claude models with tools, retrieval, and external integrations to implement multi-step coding workflows, code review, and refactoring as part of broader applications |
+
 ---
+
+
 
 ## 2026 Market Adoption Patterns
 
@@ -720,9 +733,9 @@ The AI-assisted coding landscape in 2026 has matured into distinct, complementar
 
 ## Additional Resources
 
-- **GitHub Copilot Documentation:** https://docs.github.com/en/copilot
-- **GitHub Copilot CLI Getting Started:** https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/
-- **GitHub Copilot CLI 2026 Changelog:** https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install/
-- **Model Context Protocol (MCP):** https://modelcontextprotocol.io/
-- **Visual Studio Copilot Integration:** https://visualstudio.microsoft.com/copilot/
-- **VS Code Copilot Documentation:** https://code.visualstudio.com/docs/copilot/overview
+- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [GitHub Copilot CLI Getting Started](https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/)
+- [GitHub Copilot CLI 2026 Changelog](https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install/)
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Visual Studio Copilot Integration](https://visualstudio.microsoft.com/copilot/)
+- [VS Code Copilot Documentation](https://code.visualstudio.com/docs/copilot/overview)
