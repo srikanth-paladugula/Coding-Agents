@@ -654,7 +654,102 @@ Beyond turnkey IDE and CLI tools, most major providers now offer SDKs and framew
 | **OpenAI Agents & SDKs** | OpenAI | Generally available via OpenAI Platform | Build custom coding agents and assistants that use tools and computers | Agents API for tool-using assistants, official client libraries (SDKs) in popular languages, connectors and MCP support, code execution and code interpreter-style tools for running and testing code |
 | **Claude AI Agents (via Claude API)** | Anthropic | Available via Claude Developer Platform | General-purpose and coding-focused agents backed by Claude | Use Claude models with tools, retrieval, and external integrations to implement multi-step coding workflows, code review, and refactoring as part of broader applications |
 
+
+### Microsoft Agent Framework + Github Copilot SDK
+
+Microsoft Agent Framework integrates with the GitHub Copilot SDK, enabling developers to build AI agents powered by GitHub Copilot's capabilities. This integration brings together consistent agent abstractions with GitHub Copilot's function calling, streaming responses, multi-turn conversations, shell command execution, file operations, and MCP server integration.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"background": "#f9f9f7", "primaryColor": "#fdfdf7", "primaryTextColor": "#3d3f3d", "primaryBorderColor": "#d4927f", "lineColor": "#d4927f", "secondaryColor": "#f9f9f7", "tertiaryColor": "#fdfdf7", "fontFamily": "Segoe UI, Arial, sans-serif"}}}%%
+flowchart TB
+    subgraph AgentFramework["Microsoft Agent Framework"]
+        direction TB
+        BaseAgent["AIAgent / BaseAgent<br/>Consistent Agent Abstraction"]
+        
+        subgraph Orchestrators["Multi-Agent Workflows"]
+            Sequential["Sequential"]
+            Concurrent["Concurrent"]
+            Handoff["Handoff"]
+            GroupChat["Group Chat"]
+        end
+        
+        subgraph Ecosystem["Ecosystem Integration"]
+            Declarative["Declarative Agent Definitions"]
+            A2A["A2A Protocol Support"]
+            Sessions["Sessions & Threads"]
+        end
+    end
+    
+    subgraph CopilotSDK["GitHub Copilot SDK"]
+        direction TB
+        CopilotClient["CopilotClient / GitHubCopilotAgent"]
+        
+        subgraph Capabilities["Copilot Capabilities"]
+            FunctionCalling["Function Calling"]
+            Streaming["Streaming Responses"]
+            MultiTurn["Multi-Turn Conversations"]
+        end
+        
+        subgraph SystemAccess["System-Level Access"]
+            ShellCommands["Shell Command Execution"]
+            FileOps["File Operations"]
+            URLFetch["URL Fetching"]
+        end
+        
+        subgraph MCPIntegration["MCP Integration"]
+            LocalMCP["Local MCP Servers (stdio)"]
+            RemoteMCP["Remote MCP Servers (HTTP)"]
+        end
+    end
+    
+    subgraph OtherProviders["Other AI Providers"]
+        AzureOpenAI["Azure OpenAI Agent"]
+        OpenAI["OpenAI Agent"]
+        Anthropic["Anthropic Agent"]
+        Others["Other Providers..."]
+    end
+    
+    subgraph Workflow["Multi-Agent Workflow Example"]
+        direction LR
+        Writer["Azure OpenAI Agent<br/>(Copywriter)"]
+        Reviewer["GitHub Copilot Agent<br/>(Reviewer)"]
+        Writer -->|"Sequential Pipeline"| Reviewer
+    end
+    
+    BaseAgent --> CopilotClient
+    BaseAgent --> AzureOpenAI
+    BaseAgent --> OpenAI
+    BaseAgent --> Anthropic
+    
+    CopilotClient --> Capabilities
+    CopilotClient --> SystemAccess
+    CopilotClient --> MCPIntegration
+    
+    Orchestrators --> Workflow
+    
+    style AgentFramework fill:#f9f9f7,stroke:#d4927f,color:#3d3f3d
+    style CopilotSDK fill:#f9f9f7,stroke:#d4927f,color:#3d3f3d
+    style OtherProviders fill:#fdfdf7,stroke:#d4927f,color:#3d3f3d
+    style Workflow fill:#fdfdf7,stroke:#d4927f,color:#3d3f3d
+    style BaseAgent fill:#d4927f,stroke:#d4927f,color:#fdfdf7
+    style CopilotClient fill:#d4927f,stroke:#d4927f,color:#fdfdf7
+```
+
+**Key Benefits of Using Agent Framework with GitHub Copilot SDK:**
+
+| Benefit | Description |
+|---------|-------------|
+| **Consistent Agent Abstraction** | GitHub Copilot agents implement the same `AIAgent` (.NET) / `BaseAgent` (Python) interface as every other agent type—swap providers without restructuring code |
+| **Multi-Agent Workflows** | Compose GitHub Copilot agents with Azure OpenAI, OpenAI, Anthropic, and other agents in sequential, concurrent, handoff, and group chat workflows |
+| **Ecosystem Integration** | Access declarative agent definitions, A2A protocol support, and consistent patterns for function tools, sessions, and streaming across all providers |
+| **MCP Server Support** | Connect to local (stdio) and remote (HTTP) MCP servers for external tools and data sources |
+| **Permission Controls** | Fine-grained permission handlers for shell commands, file operations, and URL fetching |
+
+**Available in:** .NET (`Microsoft.Agents.AI.GitHub.Copilot`) and Python (`agent-framework-github-copilot`)
+
 ---
+
+
 
 
 
